@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                         <tr th:each="coin,coinStatus : ${coinList}">
-                            <td th:text="${coinStatus.index}"></td>
+                            <td th:text="${coinStatus.count}"></td>
                             <td th:text="${coin.name}"></td>
                             <td th:text="${coin.symbol}"></td>
                             <td th:text="${coin.priceUSD}"></td>
