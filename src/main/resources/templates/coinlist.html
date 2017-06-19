@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Users</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette|Roboto|Titillium+Web" />
+</head>
+<body>
+
+    <div class="main-body">
+        <h2 th:text="#{coinlist.title}" />
+        <h4 th:text="#{coinlist.subtitle}" />
+        <div class="container">
+            <div class="row">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th th:text="#{coinlist.table.header.id}"></th>
+                            <th th:text="#{coinlist.table.header.name}"></th>
+                            <th th:text="#{coinlist.table.header.symbol}"></th>
+                            <th th:text="#{coinlist.table.header.priceusd}"></th>
+                            <th th:text="#{coinlist.table.header.pricebtc}"></th>
+                            <th th:text="#{coinlist.table.header.pricemyr}"></th>
+                            <th th:text="#{coinlist.table.header.percentchange1h}"></th>
+                            <th th:text="#{coinlist.table.header.percentchange24h}"></th>
+                            <th th:text="#{coinlist.table.header.percentchange7d}"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="coin,coinStatus : ${coinList}">
+                            <td th:text="${coinStatus.index}"></td>
+                            <td th:text="${coin.name}"></td>
+                            <td th:text="${coin.symbol}"></td>
+                            <td th:text="${coin.priceUSD}"></td>
+                            <td th:text="${coin.priceBTC}"></td>
+                            <td th:text="${coin.priceMYR}"></td>
+                            <td th:text="${coin.percentChange1h}"></td>
+                            <td th:text="${coin.percentChange24h}"></td>
+                            <td th:text="${coin.percentChange7d}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

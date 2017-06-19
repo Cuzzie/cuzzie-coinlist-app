@@ -1,0 +1,46 @@
+body {
+    padding-top: 80px;
+    background: #5CBF98;  /* fallback for old browsers */
+    background: linear-gradient(55deg, #4E75B9 30%, #5CBF98 90%);
+    background-attachment: fixed;
+    padding-bottom: 40px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 1.2em;
+}
+
+p, th, td {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.2em;
+}
+
+h2, h4 {
+    text-align: center;
+}
+
+h2 {
+    padding-bottom: 15px;
+    font-size: 52px;
+}
+
+h4 {
+    padding-bottom: 40px;
+    font-size: 22px;
+}
+
+.main-body {
+    background: #fff;
+    padding: 60px 50px;
+    /*position: absolute;*/
+    box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh;
+}

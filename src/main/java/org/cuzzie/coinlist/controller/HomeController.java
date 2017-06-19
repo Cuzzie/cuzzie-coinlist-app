@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -33,12 +34,12 @@ public class HomeController {
         return new CoinBuilder()
                 .setName(map.get("name"))
                 .setSymbol(map.get("symbol"))
-                .setPriceUSD(new BigDecimal(map.get("price_usd")))
-                .setPriceBTC(new BigDecimal(map.get("price_btc")))
-                .setPriceMYR(new BigDecimal(map.get("price_myr")))
-                .setPercentChange1h(new BigDecimal(map.get("percent_change_1h")))
-                .setPercentChange24h(new BigDecimal(map.get("percent_change_24h")))
-                .setPercentChange7d(new BigDecimal(map.get("percent_change_7d")))
+                .setPriceUSD(Optional.ofNullable(map.get("price_usd")).map(BigDecimal::new).orElse(null))
+                .setPriceBTC(Optional.ofNullable(map.get("price_btc")).map(BigDecimal::new).orElse(null))
+                .setPriceMYR(Optional.ofNullable(map.get("price_myr")).map(BigDecimal::new).orElse(null))
+                .setPercentChange1h(Optional.ofNullable(map.get("percent_change_1h")).map(BigDecimal::new).orElse(null))
+                .setPercentChange24h(Optional.ofNullable(map.get("percent_change_24h")).map(BigDecimal::new).orElse(null))
+                .setPercentChange7d(Optional.ofNullable(map.get("percent_change_7d")).map(BigDecimal::new).orElse(null))
                 .createCoin();
     }
 
