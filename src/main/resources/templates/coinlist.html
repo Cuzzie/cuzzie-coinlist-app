@@ -33,12 +33,12 @@
                             <td th:text="${coinStatus.count}"></td>
                             <td th:text="${coin.name}"></td>
                             <td th:text="${coin.symbol}"></td>
-                            <td th:text="${coin.priceUSD}"></td>
-                            <td th:text="${coin.priceBTC}"></td>
-                            <td th:text="${coin.priceMYR}"></td>
-                            <td th:text="${coin.percentChange1h}"></td>
-                            <td th:text="${coin.percentChange24h}"></td>
-                            <td th:text="${coin.percentChange7d}"></td>
+                            <td th:text="|$ ${coin.priceUSD}|"></td>
+                            <td th:text="|${coin.priceBTC} BTC|"></td>
+                            <td th:text="|RM ${coin.priceMYR}|"></td>
+                            <td th:text="|${coin.percentChange1h}%|"></td>
+                            <td th:text="|${coin.percentChange24h}%|"></td>
+                            <td th:text="|${coin.percentChange7d}%|"></td>
                         </tr>
                     </tbody>
                 </table>
