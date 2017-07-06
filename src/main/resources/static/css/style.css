@@ -44,3 +44,16 @@ h4 {
     left: 0;
     min-height: 100vh;
 }
+
+.main-body .numbers,
+.main-body .arrows {
+    display: inline;
+}
+
+.main-body table .glyphicon-arrow-up {
+    color: green;
+}
+
+.main-body table .glyphicon-arrow-down {
+    color: red;
+}

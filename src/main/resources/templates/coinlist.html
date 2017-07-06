@@ -36,9 +36,39 @@
                             <td th:text="|$ ${coin.priceUSD}|"></td>
                             <td th:text="|${coin.priceBTC} BTC|"></td>
                             <td th:text="|RM ${coin.priceMYR}|"></td>
-                            <td th:text="${coin.percentChange1h == null} ? '' : |${coin.percentChange1h} %|"></td>
-                            <td th:text="${coin.percentChange24h == null} ? '' : |${coin.percentChange24h} %|"></td>
-                            <td th:text="${coin.percentChange7d == null} ? '' : |${coin.percentChange7d} %|"></td>
+                            <td>
+                                <p class="numbers" th:text="${coin.percentChange1h == null} ? '' : |${coin.percentChange1h} %|"></p>
+                                <div class="arrows" th:if="${coin.percentChange1h != null}">
+                                    <div class="arrows" th:if="${coin.percentChange1h ge 0}">
+                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                    </div>
+                                    <div class="arrows" th:if="${coin.percentChange1h le 0}">
+                                        <span class="glyphicon glyphicon-arrow-down"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="numbers" th:text="${coin.percentChange24h == null} ? '' : |${coin.percentChange24h} %|"></p>
+                                <div class="arrows" th:if="${coin.percentChange24h != null}">
+                                    <div class="arrows" th:if="${coin.percentChange24h ge 0}">
+                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                    </div>
+                                    <div class="arrows" th:if="${coin.percentChange24h le 0}">
+                                        <span class="glyphicon glyphicon-arrow-down"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="numbers" th:text="${coin.percentChange7d == null} ? '' : |${coin.percentChange7d} %|"></p>
+                                <div class="arrows" th:if="${coin.percentChange7d != null}">
+                                    <div class="arrows" th:if="${coin.percentChange7d ge 0}">
+                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                    </div>
+                                    <div class="arrows" th:if="${coin.percentChange7d le 0}">
+                                        <span class="glyphicon glyphicon-arrow-down"></span>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
